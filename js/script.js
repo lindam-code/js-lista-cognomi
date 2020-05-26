@@ -16,10 +16,12 @@ listaCognomi.sort();
 console.log(listaCognomi);
 // Stampa la lista ordinata
 for (i = 0; i < listaCognomi.length; i++) {
-  console.log(listaCognomi[i]);
   var listaCognomiStampa = document.getElementById('stampa_lista');
-  listaCognomiStampa.innerHTML = '<li>' + listaCognomi[i] + '</li>'
+  var contenutoAttuale = listaCognomiStampa.innerHTML;
+  listaCognomiStampa.innerHTML = contenutoAttuale + '<li>' + listaCognomi[i] + '</li>'
 }
 
-// stampa la lista ordinata alfabeticamente.
-// Scrivi anche la posizione della lista in cui il nuovo utente si trova.
+// Scrivi anche la posizione della lista in cui il nuovo cognome si trova
+var newPositionValue = listaCognomi.indexOf(cognomeUtente) + 1;
+var newPosition = document.getElementById('new_position');
+newPosition.innerHTML = 'Il congnome inserito si trova alla posizione n° ' + newPositionValue;
